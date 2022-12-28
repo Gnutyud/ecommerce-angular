@@ -1,0 +1,97 @@
+.single_slider {
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center center;
+  background-size: cover;
+  height: 550px;
+
+  .slider_content {
+    text-align: left;
+    h1 {
+      font-size: 48px;
+      line-height: 48px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      font-size: 36px;
+      line-height: 36px;
+      margin-bottom: 0;
+      font-weight: 300;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 22px;
+      width: 80%;
+      padding: 18px 0 39px;
+      margin-bottom: 0;
+    }
+
+    a {
+      font-size: 15px;
+      font-weight: 400;
+      padding: 0 25px;
+      display: inline-block;
+      text-transform: uppercase;
+      border-radius: 10px;
+      height: 44px;
+      line-height: 44px;
+      background: inherit;
+      color: #fff;
+      background: #40a944;
+    }
+
+    h1,
+    h2,
+    h3,
+    a,
+    p,
+    span {
+      -webkit-animation-fill-mode: both;
+      animation-fill-mode: both;
+      -webkit-animation-duration: 1s;
+      animation-duration: 1s;
+      -webkit-animation-name: fadeInLeft;
+      animation-name: fadeInLeft;
+      -webkit-animation-delay: 0.3s;
+      animation-delay: 0.3s;
+    }
+
+    h2 {
+      -webkit-animation-delay: 0.5s;
+      animation-delay: 0.5s;
+    }
+
+    p {
+      -webkit-animation-delay: 0.7s;
+      animation-delay: 0.7s;
+    }
+
+    a {
+      -webkit-animation-delay: 0.9s;
+      animation-delay: 0.9s;
+    }
+  }
+}
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1600px) {
+  .single_slider {
+    height: 386px;
+  }
+}

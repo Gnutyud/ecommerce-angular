@@ -1,0 +1,21 @@
+/* Lexend - Light */
+@font-face {
+    font-family: 'Lexend';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: local(''),
+         url('../fonts/lexend-thin_wght-webfont.woff2') format('woff2'),
+         url('../fonts/lexend-thin_wght-webfont.woff') format('woff');
+  }
+  
+  /* Lexend - Regular */
+  @font-face {
+    font-family: 'Lexend';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local(''),
+      url('../fonts/lexend-regular_wght-webfont.woff2') format('woff2'),
+      url('../fonts/lexend-regular_wght-webfont.woff') format('woff');
+  }

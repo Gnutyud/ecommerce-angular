@@ -1,0 +1,110 @@
+.footer_widgets {
+  .footer_top {
+    padding-bottom: 64px;
+
+    .widgets_container {
+      &.contact_us {
+        & > p {
+          font-size: 14px;
+          line-height: 22px;
+          margin-bottom: 6px;
+
+          &.footer_desc {
+            margin-bottom: 22px;
+          }
+
+          span {
+            font-weight: 600;
+          }
+        }
+
+        .footer_logo {
+          margin-bottom: 24px;
+        }
+      }
+
+      h3 {
+        font-size: 17px;
+        line-height: 18px;
+        margin-bottom: 20px;
+        text-transform: capitalize;
+        font-weight: 500;
+      }
+
+      .footer_menu ul li a {
+        display: block;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 30px;
+      }
+    }
+
+    .subscribe_form form {
+      position: relative;
+      border: 1px solid #ededed;
+      width: 100%;
+      margin: 0 auto;
+      border-radius: 30px;
+
+      input {
+        width: 100%;
+        border: 0;
+        background: none;
+        padding: 0 120px 0 20px;
+        height: 46px;
+        font-size: 13px;
+        color: #222;
+        border-radius: 30px;
+      }
+
+      button {
+        font-size: 14px;
+        text-transform: uppercase;
+        font-weight: 400;
+        height: 100%;
+        border: 0;
+        position: absolute;
+        top: 0;
+        right: 0;
+        -webkit-transition: 0.3s;
+        transition: 0.3s;
+        padding: 0 15px;
+        border-radius: 0 30px 30px 0;
+        background: #40a944;
+        color: #fff;
+
+        &:hover {
+          background: #222222;
+        }
+      }
+    }
+  }
+
+  .footer_bottom {
+    padding: 29px 0;
+    background: #40a944;
+
+    .copyright_area p {
+      text-transform: capitalize;
+      line-height: 25px;
+      font-size: 14px;
+      color: #fff;
+
+      a:hover {
+        color: #222222;
+      }
+    }
+
+    .footer_payment {
+      text-align: right;
+
+      ul li {
+        display: inline-block;
+        margin-right: 6px;
+        a img {
+          border-radius: 3px;
+        }
+      }
+    }
+  }
+}

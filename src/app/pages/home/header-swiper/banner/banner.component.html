@@ -1,0 +1,19 @@
+<div
+  class="single_slider d-flex align-items-center"
+  [ngStyle]="{ 'background-image': 'url(' + dataItem.backgroundImageUrl + ')' }"
+>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="slider_content">
+          <h1>{{ dataItem.title }}</h1>
+          <h2>{{ dataItem.subtitle }}</h2>
+          <p>
+            {{ dataItem.desc }}
+          </p>
+          <a [routerLink]="dataItem.link">Read more </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

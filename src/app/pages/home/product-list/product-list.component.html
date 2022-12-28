@@ -1,0 +1,82 @@
+<div class="product_area">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="product_header">
+          <div class="section_title">
+            <p>Recently added our store</p>
+            <h2>Trending Products</h2>
+          </div>
+          <div class="product_tab_btn">
+            <ul class="nav" role="tablist" id="nav-tab">
+              <li>
+                <a
+                  class="active"
+                  data-toggle="tab"
+                  href="#plant1"
+                  role="tab"
+                  aria-controls="plant1"
+                  aria-selected="true"
+                >
+                  Vegetables
+                </a>
+              </li>
+              <li>
+                <a
+                  data-toggle="tab"
+                  href="#plant2"
+                  role="tab"
+                  aria-controls="plant2"
+                  aria-selected="false"
+                  class=""
+                >
+                  Fruits
+                </a>
+              </li>
+              <li>
+                <a
+                  data-toggle="tab"
+                  href="#plant3"
+                  role="tab"
+                  aria-controls="plant3"
+                  aria-selected="false"
+                  class=""
+                >
+                  Salads
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="product_container">
+      <div class="row">
+        <div class="col-12">
+          <div class="tab-content">
+            <swiper
+              [slidesPerView]="5"
+              [slidesPerGroup]="3"
+              [spaceBetween]="30"
+              [grid]="{
+                fill: 'row',
+                rows: 2
+              }"
+              [keyboard]="{
+                enabled: true
+              }"
+              [navigation]="true"
+              class="mySwiper"
+            >
+              <ng-template swiperSlide *ngFor="let item of productList">
+                <div>
+                  <app-product-item [productItem]="item"></app-product-item>
+                </div>
+              </ng-template>
+            </swiper>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

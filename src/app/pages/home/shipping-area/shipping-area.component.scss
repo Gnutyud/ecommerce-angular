@@ -1,0 +1,51 @@
+.shipping_area {
+  padding: 68px 0 60px;
+
+  .single_shipping {
+    display: flex;
+
+    .shipping_icone {
+      margin-right: 11px;
+
+      & img {
+        max-width: 40px;
+      }
+    }
+
+    .shipping_content {
+      h3 {
+        font-size: 16px;
+        line-height: 16px;
+        text-transform: uppercase;
+        font-weight: 400;
+        margin-bottom: 11px;
+      }
+
+      p {
+        font-size: 13px;
+        line-height: 19px;
+      }
+    }
+  }
+
+  @media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .single_shipping {
+      .shipping_icone {
+        margin-right: 9px;
+      }
+
+      .shipping_content {
+        h3 {
+          font-size: 14px;
+          margin-bottom: 9px;
+        }
+      }
+    }
+  }
+
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+    .single_shipping {
+      row-gap: 22px;
+    }
+  }
+}

@@ -1,0 +1,20 @@
+<swiper
+  [slidesPerView]="1"
+  [spaceBetween]="30"
+  [keyboard]="{
+    enabled: true
+  }"
+  [pagination]="{
+    clickable: true
+  }"
+  class="mySwiper"
+  [effect]="'fade'"
+>
+  <ng-container *ngFor="let item of bannerData">
+    <ng-template swiperSlide let-data>
+      <div>
+        <app-banner *ngIf="data.isActive" [dataItem]="item"></app-banner>
+      </div>
+    </ng-template>
+  </ng-container>
+</swiper>
