@@ -1,0 +1,16 @@
+<swiper
+  [slidesPerView]="slidePerView"
+  [spaceBetween]="spaceBetween"
+  [grid]="grid"
+  [keyboard]="{
+    enabled: true
+  }"
+  [navigation]="true"
+  class="mySwiper"
+>
+  <ng-template swiperSlide *ngFor="let item of productList">
+    <div>
+      <app-product-item [productItem]="item" [isHorizontal]="isHorizontal"></app-product-item>
+    </div>
+  </ng-template>
+</swiper>

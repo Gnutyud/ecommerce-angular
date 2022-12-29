@@ -1,11 +1,7 @@
-@import "~swiper/css";
-@import "~swiper/css/grid";
-@import "~swiper/css/navigation";
-
-.product_area {
+.product-section {
   margin-bottom: 64px;
 
-  .product_header {
+  &_header {
     margin-bottom: 30px;
 
     .section_title {
