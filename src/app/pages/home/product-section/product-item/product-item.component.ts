@@ -8,6 +8,7 @@ import { ProductItem } from '../product.model';
 })
 export class ProductItemComponent implements OnInit {
   @Input() productItem!: ProductItem;
+  @Input() isHorizontal: boolean = false;
   constructor() { }
 
   ngOnInit(): void {

@@ -13,8 +13,9 @@ import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { BannerComponent } from './pages/home/header-swiper/banner/banner.component';
 import { ShippingAreaComponent } from './pages/home/shipping-area/shipping-area.component';
-import { ProductListComponent } from './pages/home/product-list/product-list.component';
-import { ProductItemComponent } from './pages/home/product-list/product-item/product-item.component';
+import { ProductItemComponent } from './pages/home/product-section/product-item/product-item.component';
+import { ProductSectionComponent } from './pages/home/product-section/product-section.component';
+import { ProductSliderComponent } from './pages/home/product-section/product-slider/product-slider.component';
 
 @NgModule({
   declarations: [
@@ -27,8 +28,9 @@ import { ProductItemComponent } from './pages/home/product-list/product-item/pro
     HeaderSwiperComponent,
     BannerComponent,
     ShippingAreaComponent,
-    ProductListComponent,
-    ProductItemComponent
+    ProductItemComponent,
+    ProductSectionComponent,
+    ProductSliderComponent
   ],
   imports: [
     BrowserModule,
