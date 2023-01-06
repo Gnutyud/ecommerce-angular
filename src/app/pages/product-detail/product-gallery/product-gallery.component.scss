@@ -1,23 +1,23 @@
 @import "~swiper/css";
 @import "~swiper/css/grid";
 
-.product-slider {
+.slider-product {
   position: relative;
+
+  .image-item {
+    cursor: pointer;
+  }
+
   .prevBtn,
   .nextBtn {
-    width: 40px;
-    height: 40px;
-    font-size: 30px;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    transition: .3s;
     background: #f2f2f2;
-    text-align: center;
     border-radius: 3px;
     z-index: 10;
     border: none;
-    visibility: hidden;
+    display: none;
 
     &:hover {
       background-color: #40a944;
@@ -26,21 +26,17 @@
   }
 
   .prevBtn {
-    left: 0;
+    left: -10px;
   }
 
   .nextBtn {
-    right: 0;
+    right: -10px;
   }
 
   &:hover {
-    .prevBtn {
-      visibility: visible;
-      left: -50px;
-    }
+    .prevBtn,
     .nextBtn {
-      visibility: visible;
-      right: -50px;
+      display: block;
     }
   }
 }

@@ -1,0 +1,36 @@
+.breadcrumbs_area {
+  background: url("../../../../assets/images/bg/breadcrumb.jpg") no-repeat 0 0;
+  background-size: cover;
+  height: 200px;
+  display: flex;
+  align-items: center;
+
+  .breadcrumb_content {
+    text-align: center;
+
+    ul li {
+      display: inline-block;
+      text-transform: capitalize;
+      font-size: 14px;
+      margin-right: 3px;
+      padding-right: 13px;
+      position: relative;
+
+      &::before {
+        position: absolute;
+        content: "/";
+        right: 0;
+        margin-right: 3px;
+        top: 50%;
+        transform: translatey(-50%);
+      }
+
+      &:last-child {
+        margin-right: 0;
+        &::before {
+            content: none;
+        }
+      }
+    }
+  }
+}

@@ -1,12 +1,13 @@
+
 <div class="product_items">
   <article class="single_product" [ngClass]="{'product-horizontal': isHorizontal}">
     <figure>
       <div class="product_thumb">
-        <a class="primary_img" href="product-details.html"
-          ><img [src]="productItem.mainImage" alt={{productItem.name}}
+        <a class="primary_img" [routerLink]="['/product-details/1']"
+          ><img [src]="productItem.imageGalleries[0]" alt={{productItem.name}}
         /></a>
-        <a class="secondary_img" href="product-details.html"
-          ><img [src]="productItem.secondImage" alt={{productItem.name}}
+        <a class="secondary_img" [routerLink]="['/product-details/1']"
+          ><img [src]="productItem.imageGalleries[1]" alt={{productItem.name}}
         /></a>
         <div class="label_product">
           <span class="label_sale" *ngIf="productItem.isSale">Sale</span>
@@ -37,7 +38,7 @@
       </div>
       <figcaption class="product_content">
         <h4 class="product_name">
-          <a href="product-details.html">{{productItem.name}}</a>
+          <a [routerLink]="['/product-details/1']">{{productItem.name}}</a>
         </h4>
         <p><a href="#">{{productItem.category}}</a></p>
         <div class="action_links" *ngIf="isHorizontal">
