@@ -1,52 +1,50 @@
+@import "../../../assets/styles/mixin";
+
 .home {
   .banner_area {
     margin-bottom: 65px;
 
     .banner_thumb {
-      position: relative;
-      transition: 0.3s;
+      @include hoverEffect;
+    }
+  }
 
-      &::before {
-        background: rgba(255, 255, 255, 0.3);
-        bottom: 0;
-        content: "";
-        left: 50%;
-        position: absolute;
-        right: 51%;
-        top: 0;
-        opacity: 1;
-        pointer-events: none;
+  .banner_fullwidth {
+    margin-bottom: 65px;
+    background-image: url("../../../assets/images/bg/banner3.jpg");
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    padding: 55px 0 60px;
+
+    .banner_full_content {
+      p {
+        font-size: 20px;
+        line-height: 24px;
+        text-transform: uppercase;
+        color: #40a944;
+        margin-bottom: 9px;
       }
 
-      &::after {
-        background: rgba(255, 255, 255, 0.6);
-        bottom: 50%;
-        content: "";
-        left: 0;
-        position: absolute;
-        right: 0;
-        top: 50%;
-        opacity: 1;
-        pointer-events: none;
+      h2 {
+        font-size: 46px;
+        line-height: 50px;
+        font-weight: 500;
+        text-transform: uppercase;
+        margin-bottom: 0;
+
+        span {
+          display: block;
+          font-size: 28px;
+          line-height: 30px;
+          font-weight: 400;
+        }
       }
 
-      img {
-        transition: 0.3s;
-        width: 100%;
-      }
-
-      &:hover::before {
-        left: 0;
-        right: 0;
-        opacity: 0;
-        transition: all 900ms linear;
-      }
-
-      &:hover::after {
-        top: 0;
-        bottom: 0;
-        opacity: 0;
-        transition: all 900ms linear;
+      a {
+        margin-top: 45px;
+        @include ButtonLink;
       }
     }
   }

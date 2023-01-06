@@ -1,8 +1,9 @@
+
 <div class="product_items">
-  <article class="single_product">
+  <article class="single_product" [ngClass]="{'product-horizontal': isHorizontal}">
     <figure>
       <div class="product_thumb">
-        <a class="primary_img" [routerLink]="['/product-details/1']" routerLinkActive="router-link-active"
+        <a class="primary_img" [routerLink]="['/product-details/1']"
           ><img [src]="productItem.imageGalleries[0]" alt={{productItem.name}}
         /></a>
         <a class="secondary_img" [routerLink]="['/product-details/1']"
@@ -12,7 +13,7 @@
           <span class="label_sale" *ngIf="productItem.isSale">Sale</span>
           <span class="label_new" *ngIf="productItem.isNew">New</span>
         </div>
-        <div class="action_links">
+        <div class="action_links" *ngIf="!isHorizontal">
           <ul>
             <li class="add_to_cart">
               <a href="cart.html">
@@ -37,9 +38,31 @@
       </div>
       <figcaption class="product_content">
         <h4 class="product_name">
-          <a href="product-details.html">{{productItem.name}}</a>
+          <a [routerLink]="['/product-details/1']">{{productItem.name}}</a>
         </h4>
         <p><a href="#">{{productItem.category}}</a></p>
+        <div class="action_links" *ngIf="isHorizontal">
+          <ul>
+            <li class="add_to_cart">
+              <a href="cart.html">
+                <i class="bi bi-cart4"></i>
+                <span class="tooltiptext">Add to cart</span>
+              </a>
+            </li>
+            <li class="quick_button">
+              <a href="#">
+                <i class="bi bi-search"></i>
+                <span class="tooltiptext">quick view</span>
+              </a>
+            </li>
+            <li class="wishlist">
+              <a href="wishlist.html"
+                ><i class="bi bi-bag-heart"></i>
+                <span class="tooltiptext">Add to Wishlist</span>
+              </a>
+            </li>
+          </ul>
+        </div>
         <div class="price_box">
           <span class="current_price">{{productItem.currentPrice}}</span>
           <span class="old_price">{{productItem.oldPrice}}</span>

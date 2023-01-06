@@ -1,0 +1,32 @@
+<div class="product-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="product-section_header">
+            <div class="section_title">
+              <p>{{ sectionDesc }}</p>
+              <h2>{{ sectionTitle }}</h2>
+            </div>
+            <div class="product_tab_btn" *ngIf="tabList.length > 0">
+              <ul class="nav" role="tablist" id="nav-tab">
+                <li *ngFor="let tabName of tabList">
+                  <a [ngClass]="{ 'active': tabName === activeTab }" role="tab">
+                    {{ tabName }}
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="product_container">
+        <div class="row">
+          <div class="col-12">
+            <div class="tab-content">
+              <ng-content></ng-content>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

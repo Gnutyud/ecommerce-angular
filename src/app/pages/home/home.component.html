@@ -1,7 +1,27 @@
 <div class="home">
+  <!-- Start Header Slider -->
   <app-header-swiper></app-header-swiper>
+  <!-- End Header Slider -->
+
+  <!-- Start shipping area -->
   <app-shipping-area></app-shipping-area>
-  <app-product-list></app-product-list>
+  <!-- End shipping area -->
+
+  <!-- Start Trending Products -->
+  <app-product-section
+    [sectionTitle]="'Trending Products'"
+    [sectionDesc]="'Recently added our store'"
+    [tabList]="['Vegetables', 'Fruits', 'Salads']"
+    [activeTab]="'Vegetables'"
+  >
+    <app-product-slider
+      [productList]="productList"
+      [grid]="{ fill: 'row', rows: 2 }"
+    ></app-product-slider>
+  </app-product-section>
+  <!-- End Trending Products -->
+
+  <!-- Start banner area -->
   <div class="banner_area">
     <div class="container">
       <div class="row">
@@ -26,4 +46,45 @@
       </div>
     </div>
   </div>
+  <!-- End banner area -->
+
+  <!-- Start Deals Of The Weeks -->
+  <app-product-section
+    [sectionTitle]="'Deals Of The Weeks'"
+    [sectionDesc]="'Recently added our store'"
+    [tabList]="[]"
+  >
+    <app-product-slider [productList]="productList"></app-product-slider>
+  </app-product-section>
+  <!-- End Deals Of The Weeks -->
+
+  <!-- Start banner full width -->
+  <div class="banner_fullwidth">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="banner_full_content">
+                    <p>Black Fridays !</p>
+                    <h2>Sale 50% OFf <span>all vegetable products</span></h2>
+                    <a href="shop.html">discover now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End banner full width -->
+
+<!-- Start Trending Products -->
+<app-product-section
+[sectionTitle]="'Featured Products'"
+[sectionDesc]="'Recently added our store'"
+>
+<app-product-slider
+  [productList]="productList"
+  [grid]="{ fill: 'row', rows: 3 }"
+  [slidePerView]="3"
+  [isHorizontal]="true"
+></app-product-slider>
+</app-product-section>
+<!-- End Trending Products -->
 </div>
