@@ -1,0 +1,21 @@
+<div class="slider-product">
+  <swiper
+    #swiper
+    [slidesPerView]="slidePerView"
+    [spaceBetween]="spaceBetween"
+    [grid]="grid"
+    [keyboard]="{
+      enabled: true
+    }"
+    class="product-detail-slider"
+    [virtual]="true"
+  >
+    <ng-template swiperSlide *ngFor="let item of productImages">
+      <div (click)="handleSelectImage(item)">
+        <img class="image-item" [src]="item" />
+      </div>
+    </ng-template>
+  </swiper>
+  <button class="prevBtn" (click)="slidePrev()"><i class="bi bi-chevron-left"></i></button>
+  <button class="nextBtn" (click)="slideNext()"><i class="bi bi-chevron-right"></i></button>
+</div>

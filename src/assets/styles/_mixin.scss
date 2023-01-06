@@ -1,0 +1,81 @@
+@mixin hoverEffect {
+  position: relative;
+  transition: 0.3s;
+
+  &::before {
+    background: rgba(255, 255, 255, 0.3);
+    bottom: 0;
+    content: "";
+    left: 50%;
+    position: absolute;
+    right: 51%;
+    top: 0;
+    opacity: 1;
+    pointer-events: none;
+  }
+
+  &::after {
+    background: rgba(255, 255, 255, 0.6);
+    bottom: 50%;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    opacity: 1;
+    pointer-events: none;
+  }
+
+  img {
+    transition: 0.3s;
+    width: 100%;
+  }
+
+  &:hover::before {
+    left: 0;
+    right: 0;
+    opacity: 0;
+    transition: all 900ms linear;
+  }
+
+  &:hover::after {
+    top: 0;
+    bottom: 0;
+    opacity: 0;
+    transition: all 900ms linear;
+  }
+}
+
+@mixin ButtonLink {
+  font-size: 15px;
+  font-weight: 400;
+  padding: 0 25px;
+  display: inline-block;
+  text-transform: uppercase;
+  border-radius: 10px;
+  height: 44px;
+  line-height: 44px;
+  background: inherit;
+  color: #fff;
+  background: #40a944;
+
+  &:hover {
+    background-color: #222222;
+  }
+}
+
+@mixin Button {
+  border: 0;
+  font-size: 16px;
+  background: #40a944;
+  color: #fff;
+  height: 42px;
+  line-height: 42px;
+  text-transform: capitalize;
+  min-width: 270px;
+  border-radius: 3px;
+
+  &:hover {
+    background-color: #222222;
+  }
+}

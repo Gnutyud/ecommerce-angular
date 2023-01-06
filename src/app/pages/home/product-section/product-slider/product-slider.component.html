@@ -1,0 +1,25 @@
+<div class="product-slider">
+  <swiper
+    #productSlider
+    [slidesPerView]="slidePerView"
+    [spaceBetween]="spaceBetween"
+    [grid]="grid"
+    class="mySwiper"
+    [virtual]="true"
+  >
+    <ng-template swiperSlide *ngFor="let item of productList">
+      <div>
+        <app-product-item
+          [productItem]="item"
+          [isHorizontal]="isHorizontal"
+        ></app-product-item>
+      </div>
+    </ng-template>
+  </swiper>
+  <button class="prevBtn" (click)="slidePrev()">
+    <i class="bi bi-chevron-left"></i>
+  </button>
+  <button class="nextBtn" (click)="slideNext()">
+    <i class="bi bi-chevron-right"></i>
+  </button>
+</div>

@@ -1,0 +1,101 @@
+<app-breadcrumb [breadcrumbData]="breadcrumbData"></app-breadcrumb>
+<div class="product_details">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-md-6">
+        <div class="product-details-tab">
+          <div class="image-view-wrapper">
+            <img [src]="currentImageSrc" alt="main image" />
+          </div>
+          <div class="single-zoom-thumb">
+            <app-product-gallery
+              (changCurrentImageEvent)="onSelectProductImage($event)"
+            >
+              [productDetail]="productDetail" [slidePerView]="3" >
+            </app-product-gallery>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6">
+        <div class="product_d_right">
+          <form action="#">
+            <h1>
+              {{ productDetail.name }}
+            </h1>
+            <div class="product_ratting">
+              <ul>
+                <li>
+                  <a href="#"><i class="bi bi-star"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="bi bi-star"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="bi bi-star"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="bi bi-star"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="bi bi-star"></i></a>
+                </li>
+                <li class="review"><a href="#"> (customer review ) </a></li>
+              </ul>
+            </div>
+            <div class="price_box">
+              <span class="current_price">{{
+                productDetail.currentPrice
+              }}</span>
+              <span class="old_price">{{ productDetail.oldPrice }}</span>
+            </div>
+            <div class="product_desc">
+              <p>
+                {{ productDetail.description }}
+              </p>
+            </div>
+            <div class="product_variant quantity">
+              <label>quantity</label>
+              <input min="1" max="100" value="1" type="number" />
+              <button class="button" type="submit">add to cart</button>
+            </div>
+            <div class="product_d_action">
+              <ul>
+                <li>
+                  <a href="#" title="Add to wishlist">+ Add to Wishlist</a>
+                </li>
+                <li><a href="#" title="Add to wishlist">+ Compare</a></li>
+              </ul>
+            </div>
+            <div class="product_meta">
+              <span>Category: <a href="#">Clothing</a></span>
+            </div>
+          </form>
+          <div class="priduct_social">
+            <ul>
+              <li>
+                <a class="facebook" href="#" title="facebook"
+                  ><i class="bi bi-facebook"></i> Like</a
+                >
+              </li>
+              <li>
+                <a class="twitter" href="#" title="twitter"
+                  ><i class="bi bi-twitter"></i> tweet</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-product-tab-info></app-product-tab-info>
+<!-- Start Related Products -->
+<app-product-section
+[sectionTitle]="'Related Products'"
+[sectionDesc]="''"
+[tabList]="[]"
+>
+<app-product-slider [productList]="relatedProducts"></app-product-slider>
+</app-product-section>
+<!-- End Deals Of The Weeks -->

@@ -1,0 +1,38 @@
+<div class="product_tab_info">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="product_d_inner">
+          <div class="product_info_button">
+            <ul class="nav" role="tablist" id="nav-tab">
+              <li [ngClass]="{active: currentTabInfo === 'desc'}">
+                <button (click)="onSelectTab('desc')">Description</button>
+              </li>
+              <li [ngClass]="{active: currentTabInfo === 'spec'}">
+                <button (click)="onSelectTab('spec')">Specification</button>
+              </li>
+              <li [ngClass]="{active: currentTabInfo === 'review'}">
+                <button (click)="onSelectTab('review')">Reviews (1)</button>
+              </li>
+            </ul>
+          </div>
+          <div class="tab-content">
+            <container-element [ngSwitch]="currentTabInfo">
+              <!-- the same view can be shown in more than one case -->
+              <app-product-tab-specification
+                *ngSwitchCase="'spec'"
+              ></app-product-tab-specification>
+              <app-product-tab-review
+                *ngSwitchCase="'review'"
+              ></app-product-tab-review>
+              <!--default case when there are no matches -->
+              <app-product-tab-description
+                *ngSwitchDefault
+              ></app-product-tab-description>
+            </container-element>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+<div class="breadcrumbs_area">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="breadcrumb_content">
+          <ul>
+            <li *ngFor="let item of breadcrumbData">
+              <a
+                *ngIf="item?.link; else other_content"
+                href="{{ item.link }}"
+                >{{ item.name }}</a
+              >
+              <ng-template #other_content>{{ item.name }}</ng-template>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
