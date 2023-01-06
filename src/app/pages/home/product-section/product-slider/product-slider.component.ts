@@ -1,4 +1,10 @@
-import { Component, OnInit, ViewEncapsulation, Input, ViewChild } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ViewEncapsulation,
+  Input,
+  ViewChild,
+} from '@angular/core';
 import { ProductItem } from 'src/app/core/data/schema/product';
 // import Swiper core and required modules
 import SwiperCore, { Grid } from 'swiper';
@@ -26,13 +32,15 @@ export class ProductSliderComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  @ViewChild('productSlider', { static: false }) productSlider: SwiperComponent | undefined;
+  @ViewChild('productSlider', { static: false }) productSlider:
+    | SwiperComponent
+    | undefined;
 
-  slideNext(){
+  slideNext() {
     this.productSlider?.swiperRef.slideNext();
-  };
+  }
 
-  slidePrev(){
+  slidePrev() {
     this.productSlider?.swiperRef.slidePrev();
-  };
+  }
 }

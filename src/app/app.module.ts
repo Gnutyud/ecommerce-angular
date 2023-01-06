@@ -11,8 +11,7 @@ import { LayoutComponent } from './layout/layout.component';
 import { BannerComponent } from './pages/home/header-swiper/banner/banner.component';
 import { HeaderSwiperComponent } from './pages/home/header-swiper/header-swiper.component';
 import { HomeComponent } from './pages/home/home.component';
-import { ProductItemComponent } from './pages/home/product-list/product-item/product-item.component';
-import { ProductListComponent } from './pages/home/product-list/product-list.component';
+import { ProductItemComponent } from './pages/home/product-section/product-item/product-item.component';
 import { ProductSectionComponent } from './pages/home/product-section/product-section.component';
 import { ProductSliderComponent } from './pages/home/product-section/product-slider/product-slider.component';
 import { ShippingAreaComponent } from './pages/home/shipping-area/shipping-area.component';
@@ -38,7 +37,6 @@ import { SwiperModule } from 'swiper/angular';
     HeaderSwiperComponent,
     BannerComponent,
     ShippingAreaComponent,
-    ProductListComponent,
     ProductItemComponent,
     ProductSectionComponent,
     ProductSliderComponent,
