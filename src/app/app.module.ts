@@ -23,6 +23,8 @@ import { ProductTabDescriptionComponent } from './pages/product-detail/product-t
 import { ProductTabReviewComponent } from './pages/product-detail/product-tab-info/tabs/product-tab-review/product-tab-review.component';
 import { ProductTabSpecificationComponent } from './pages/product-detail/product-tab-info/tabs/product-tab-specification/product-tab-specification.component';
 import { BreadcrumbComponent } from './shared/components/breadcrumb/breadcrumb.component';
+import { WishlistComponent } from './pages/wishlist/wishlist.component';
+import { TableComponent } from './shared/components/table/table.component';
 import { ProductDetailsComponent } from './shared/components/product-details/product-details.component';
 // Import the library
 import { SwiperModule } from 'swiper/angular';
@@ -48,6 +50,8 @@ import { SwiperModule } from 'swiper/angular';
     ProductTabDescriptionComponent,
     ProductTabSpecificationComponent,
     ProductTabReviewComponent,
+    WishlistComponent,
+    TableComponent,
     ProductDetailsComponent,
   ],
   imports: [

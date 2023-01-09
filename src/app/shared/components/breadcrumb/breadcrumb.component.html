@@ -7,7 +7,7 @@
             <li *ngFor="let item of breadcrumbData">
               <a
                 *ngIf="item?.link; else other_content"
-                href="{{ item.link }}"
+                [routerLink]="item.link"
                 >{{ item.name }}</a
               >
               <ng-template #other_content>{{ item.name }}</ng-template>
