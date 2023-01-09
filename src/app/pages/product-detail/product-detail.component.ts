@@ -10,11 +10,11 @@ export class ProductDetailComponent implements OnInit {
   breadcrumbData = [
     {
       name: 'Home',
-      link: 'home.html',
+      link: '/',
     },
     {
       name: 'All Product',
-      link: 'all-product.html',
+      link: '/all-product',
     },
     {
       name: 'Product Detail',
