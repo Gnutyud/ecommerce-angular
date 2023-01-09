@@ -25,6 +25,7 @@ import { ProductTabSpecificationComponent } from './pages/product-detail/product
 import { BreadcrumbComponent } from './shared/components/breadcrumb/breadcrumb.component';
 import { WishlistComponent } from './pages/wishlist/wishlist.component';
 import { TableComponent } from './shared/components/table/table.component';
+import { ProductDetailsComponent } from './shared/components/product-details/product-details.component';
 // Import the library
 import { SwiperModule } from 'swiper/angular';
 
@@ -51,6 +52,7 @@ import { SwiperModule } from 'swiper/angular';
     ProductTabReviewComponent,
     WishlistComponent,
     TableComponent,
+    ProductDetailsComponent,
   ],
   imports: [
     BrowserModule,

@@ -24,11 +24,6 @@ export class ProductDetailComponent implements OnInit {
   constructor(private productService: ProductService) {}
   productDetail = this.productService.productList[0];
   relatedProducts = this.productService.productList;
-  currentImageSrc = this.productDetail.imageGalleries[0];
-
-  onSelectProductImage(imageSrc: string) {
-    this.currentImageSrc = imageSrc;
-  }
 
   ngOnInit(): void {}
 }

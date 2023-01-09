@@ -1,0 +1,154 @@
+@import "../../../../assets/styles/mixin";
+
+.product_details {
+  margin-top: 70px;
+  margin-bottom: 70px;
+  .product-details-tab {
+    .image-view-wrapper {
+      border: 1px solid #ededed;
+      img {
+        width: 100%;
+      }
+    }
+
+    .single-zoom-thumb {
+      margin-top: 20px !important;
+      width: 80%;
+      margin: 0 auto;
+    }
+  }
+
+  .product_d_right {
+    h1 {
+      text-transform: capitalize;
+      line-height: 20px;
+      font-size: 22px;
+      font-weight: 400;
+      margin-bottom: 22px;
+      color: #252525;
+    }
+
+    .product_ratting {
+      margin-bottom: 17px;
+      ul li {
+        display: inline-block;
+        margin-right: 3px;
+        a {
+          color: #feb954;
+        }
+
+        &.review a {
+          color: #5a5a5a;
+          margin-left: 10px;
+        }
+      }
+    }
+
+    .price_box {
+      margin-bottom: 14px;
+      margin-top: 12px;
+
+      span {
+        &.old_price {
+          text-decoration: line-through;
+          font-weight: 400;
+          font-size: 20px;
+          margin-left: 5px;
+        }
+
+        &.current_price {
+          font-size: 23px;
+          font-weight: 500;
+          color: #40a944;
+          margin-right: 5px;
+        }
+      }
+    }
+
+    .product_desc {
+      margin-bottom: 19px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid #ededed;
+      p {
+        font-size: 14px;
+        line-height: 26px;
+      }
+    }
+
+    .product_variant {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+
+      &.quantity label {
+        font-weight: 600;
+        text-transform: capitalize;
+        font-size: 14px;
+        margin-bottom: 0;
+      }
+
+      &.quantity input {
+        width: 130px;
+        border: 1px solid #ebebeb;
+        background: none;
+        height: 42px;
+        padding: 0 12px;
+        border-radius: 5px;
+        margin-left: 15px;
+        margin-right: 20px;
+      }
+
+      button {
+        @include Button;
+        border: none;
+      }
+    }
+
+    .product_d_action {
+      margin-bottom: 14px;
+
+      ul li a {
+        font-size: 14px;
+        line-height: 28px;
+      }
+    }
+
+    .product_meta {
+      margin-bottom: 24px;
+
+      span {
+        font-weight: 600;
+
+        a {
+          margin-left: 10px;
+          font-weight: 400;
+        }
+      }
+    }
+
+    .priduct_social ul li {
+      display: inline-block;
+      margin-right: 7px;
+
+      a {
+        color: #fff;
+        font-size: 12px;
+        line-height: 24px;
+        padding: 0 8px;
+        border-radius: 3px;
+        text-transform: capitalize;
+        display: block;
+
+        &.facebook {
+          background: #3b5999;
+        }
+
+        &.twitter {
+          background: #1da1f2;
+        }
+      }
+    }
+  }
+}
