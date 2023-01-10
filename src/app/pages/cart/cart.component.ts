@@ -1,23 +1,28 @@
 import { Component, OnInit } from '@angular/core';
 
+interface Column {
+  accessorKey: string;
+  header: string;
+}
+
 @Component({
-  selector: 'app-wishlist',
-  templateUrl: './wishlist.component.html',
-  styleUrls: ['./wishlist.component.scss'],
+  selector: 'app-cart',
+  templateUrl: './cart.component.html',
+  styleUrls: ['./cart.component.scss'],
 })
-export class WishlistComponent implements OnInit {
+export class CartComponent implements OnInit {
   breadcrumbData = [
     {
       name: 'Home',
       link: '/',
     },
     {
-      name: 'Wishlist',
+      name: 'Shopping Cart',
       link: '',
     },
   ];
 
-  columns = [
+  columns: Column[] = [
     {
       accessorKey: '',
       header: 'Delete',
@@ -35,12 +40,12 @@ export class WishlistComponent implements OnInit {
       header: 'Price',
     },
     {
-      accessorKey: 'avaiable',
-      header: 'Available',
+      accessorKey: 'quantity',
+      header: 'quantity',
     },
     {
-      accessorKey: '',
-      header: 'Add To Cart',
+      accessorKey: 'total',
+      header: 'Total',
     },
   ];
 
@@ -49,22 +54,24 @@ export class WishlistComponent implements OnInit {
       image: 'assets/images/product/product1.jpg',
       productName: 'Handbag fringilla',
       currentPrice: '£65.00',
-      available: true,
+      quantity: 1,
+      total: '£190.00',
     },
     {
       image: 'assets/images/product/product2.jpg',
       productName: 'Handbags Justo',
       currentPrice: '£90.00',
-      available: true,
+      quantity: 5,
+      total: '£920.00',
     },
     {
       image: 'assets/images/product/product8.jpg',
       productName: 'Handbag Elit',
       currentPrice: '£54.00',
-      available: true,
+      quantity: 3,
+      total: '£510.00',
     },
   ];
-
   constructor() {}
 
   ngOnInit(): void {}

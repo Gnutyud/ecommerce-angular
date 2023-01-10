@@ -28,6 +28,8 @@ import { TableComponent } from './shared/components/table/table.component';
 import { ProductDetailsComponent } from './shared/components/product-details/product-details.component';
 // Import the library
 import { SwiperModule } from 'swiper/angular';
+import { CartComponent } from './pages/cart/cart.component';
+import { MiniCartComponent } from './shared/components/mini-cart/mini-cart.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +55,8 @@ import { SwiperModule } from 'swiper/angular';
     WishlistComponent,
     TableComponent,
     ProductDetailsComponent,
+    CartComponent,
+    MiniCartComponent,
   ],
   imports: [
     BrowserModule,

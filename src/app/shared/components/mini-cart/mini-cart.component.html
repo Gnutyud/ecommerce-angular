@@ -1,0 +1,52 @@
+<!--mini cart-->
+<div class="mini_cart">
+  <div class="cart_gallery">
+    <div class="cart_close">
+      <div class="cart_text">
+        <h3>cart</h3>
+      </div>
+      <div class="mini_cart_close">
+        <a href="javascript:void(0)"><i class="bi bi-x-lg"></i></a>
+      </div>
+    </div>
+    <div class="cart_item" *ngFor="let item of cartList">
+      <div class="cart_img">
+        <a href="#"><img [src]="item.image" alt="" /></a>
+      </div>
+      <div class="cart_info">
+        <a href="#">{{ item.name }}</a>
+        <p>
+          {{ item.quantity }} x <span> {{ item.currentPrice }} </span>
+        </p>
+      </div>
+      <div class="cart_remove">
+        <a href="#"><i class="bi bi-x"></i></a>
+      </div>
+    </div>
+  </div>
+  <div class="mini_cart_table">
+    <div class="cart_table_border">
+      <div class="cart_total">
+        <span>Sub total:</span>
+        <span class="price">$125.00</span>
+      </div>
+      <div class="cart_total mt-10">
+        <span>total:</span>
+        <span class="price">$125.00</span>
+      </div>
+    </div>
+  </div>
+  <div class="mini_cart_footer">
+    <div class="cart_button">
+      <a [routerLink]="['/shopping-cart']"
+        ><i class="bi bi-cart4"></i> View cart</a
+      >
+    </div>
+    <div class="cart_button">
+      <a [routerLink]="['/checkout']"
+        ><i class="bi bi-cart-check"></i> Checkout</a
+      >
+    </div>
+  </div>
+</div>
+<!--mini cart end-->
