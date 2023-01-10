@@ -73,13 +73,7 @@
               width: 150px;
 
               a {
-                @include ButtonLink;
-                font-size: 12px;
-                font-weight: 500;
-                height: 38px;
-                line-height: 18px;
-                padding: 10px 20px;
-                border-radius: 3px;
+                @include ButtonSmall;
               }
             }
           }
@@ -88,6 +82,15 @@
             border-right: 0;
           }
         }
+      }
+    }
+
+    .cart_submit {
+      text-align: right;
+      padding: 12px;
+
+      button {
+        @include ButtonSmall;
       }
     }
   }

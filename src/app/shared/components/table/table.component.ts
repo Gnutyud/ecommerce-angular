@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 interface Column {
   accessorKey: string;
@@ -11,7 +11,7 @@ interface Column {
   styleUrls: ['./table.component.scss']
 })
 export class TableComponent implements OnInit {
-  columns: Column[] = [
+  @Input() columns: Column[] = [
     {
       accessorKey: '',
       header: "Delete"
@@ -57,6 +57,7 @@ export class TableComponent implements OnInit {
       available: true,
     }
   ]
+  @Input() showSubmitBtn: boolean = false;
   constructor() { }
 
   ngOnInit(): void {

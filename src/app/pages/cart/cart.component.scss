@@ -1,0 +1,88 @@
+@import "../../../assets/styles/mixin";
+
+.table-row {
+  @include TableRow;
+}
+
+.coupon_area {
+  margin-bottom: 70px;
+
+  .coupon_code {
+    border: 1px solid #ededed;
+
+    h3 {
+      color: #ffffff;
+      line-height: 36px;
+      padding: 5px 15px;
+      background: #222222;
+      text-transform: uppercase;
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    .coupon_inner {
+      padding: 10px 20px 25px;
+      p {
+        font-size: 14px;
+        margin-bottom: 20px;
+      }
+      input {
+        border: 1px solid #ededed;
+        height: 42px;
+        background: none;
+        padding: 0 20px;
+        margin-right: 20px;
+        font-size: 12px;
+        color: #222222;
+      }
+
+      button {
+        @include ButtonSmall;
+      }
+
+      a {
+        display: block;
+        text-align: right;
+        font-size: 14px;
+        font-weight: 500;
+        margin-bottom: 20px;
+        border-bottom: 1px solid #ededed;
+        padding-bottom: 10px;
+        border-radius: 3px;
+      }
+    }
+
+    &.right {
+      .cart_subtotal {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+
+        p {
+          font-weight: 600;
+          font-size: 14px;
+
+          span {
+            margin-right: 30px;
+          }
+
+          &.cart_amount {
+            font-size: 18px;
+            font-weight: 500;
+          }
+        }
+      }
+
+      .checkout_btn {
+        text-align: right;
+
+        a {
+          @include ButtonSmall;
+        }
+      }
+    }
+  }
+}
