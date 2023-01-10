@@ -30,6 +30,7 @@ import { ProductDetailsComponent } from './shared/components/product-details/pro
 import { SwiperModule } from 'swiper/angular';
 import { CartComponent } from './pages/cart/cart.component';
 import { MiniCartComponent } from './shared/components/mini-cart/mini-cart.component';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +58,7 @@ import { MiniCartComponent } from './shared/components/mini-cart/mini-cart.compo
     ProductDetailsComponent,
     CartComponent,
     MiniCartComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
