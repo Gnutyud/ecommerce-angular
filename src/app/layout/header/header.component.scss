@@ -263,6 +263,18 @@ header {
             font-size: 12px;
             display: inline-block;
           }
+
+          .logoutBtn:hover {
+            font-size: 15px;
+            line-height: 28px;
+            display: inline-block;
+            font-weight: 500;
+            border: 1px solid transparent;
+            padding: 0 20px;
+            border-radius: 20px;
+            color: #40a944;
+            border-color: #40a944;
+          }
         }
 
         .mini_cart_wrapper {
