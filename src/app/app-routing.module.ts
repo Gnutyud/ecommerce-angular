@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './core/services/auth-guard.service';
 import { CartComponent } from './pages/cart/cart.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
@@ -24,6 +25,7 @@ const routes: Routes = [
   {
     path: 'product-details/:id',
     component: ProductDetailComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'wishlist',

@@ -6,19 +6,19 @@
           <div class="language_currency">
             <ul>
               <li class="language">
-                <a href="#">Language <i class="bi bi-chevron-down"></i></a>
+                <a routerLink="/">Language <i class="bi bi-chevron-down"></i></a>
                 <ul class="dropdown_language">
-                  <li><a href="#">French</a></li>
-                  <li><a href="#">Spanish</a></li>
-                  <li><a href="#">Russian</a></li>
+                  <li><a routerLink="/">French</a></li>
+                  <li><a routerLink="/">Spanish</a></li>
+                  <li><a routerLink="/">Russian</a></li>
                 </ul>
               </li>
               <li class="currency">
-                <a href="#">Currency <i class="bi bi-chevron-down"></i></a>
+                <a routerLink="/">Currency <i class="bi bi-chevron-down"></i></a>
                 <ul class="dropdown_currency">
-                  <li><a href="#">€ Euro</a></li>
-                  <li><a href="#">£ Pound Sterling</a></li>
-                  <li><a href="#">$ US Dollar</a></li>
+                  <li><a routerLink="/">€ Euro</a></li>
+                  <li><a routerLink="/">£ Pound Sterling</a></li>
+                  <li><a routerLink="/">$ US Dollar</a></li>
                 </ul>
               </li>
             </ul>
@@ -28,19 +28,19 @@
           <div class="header_social text-right">
             <ul>
               <li>
-                <a href="#"><i class="bi bi-twitter"></i></a>
+                <a routerLink="/"><i class="bi bi-twitter"></i></a>
               </li>
               <li>
-                <a href="#"><i class="bi bi-google"></i></a>
+                <a routerLink="/"><i class="bi bi-google"></i></a>
               </li>
               <li>
-                <a href="#"><i class="bi bi-youtube"></i></a>
+                <a routerLink="/"><i class="bi bi-youtube"></i></a>
               </li>
               <li>
-                <a href="#"><i class="bi bi-facebook"></i></a>
+                <a routerLink="/"><i class="bi bi-facebook"></i></a>
               </li>
               <li>
-                <a href="#"><i class="bi bi-instagram"></i></a>
+                <a routerLink="/"><i class="bi bi-instagram"></i></a>
               </li>
             </ul>
           </div>
@@ -53,7 +53,7 @@
       <div class="row align-items-center">
         <div class="col-lg-2 col-md-3 col-sm-3 col-3">
           <div class="logo">
-            <a href="index.html"
+            <a routerLink="/"
               ><img src="../../../assets/icons/logo.png" alt="logo"
             /></a>
           </div>
@@ -107,11 +107,16 @@
             </div>
             <div class="header_account_area">
               <div class="header_account_list register">
-                <ul>
+                <ul *ngIf="!isLoggedIn;else logout">
                   <li><a [routerLink]="['/login']">Register</a></li>
-                  <li><span>/</span></li>
+                  <li><span> / </span></li>
                   <li><a [routerLink]="['/login']">Login</a></li>
                 </ul>
+                <ng-template #logout>
+                  <ul>
+                    <li><a class="logoutBtn" (click)="onLogout()">Logout</a></li>
+                  </ul>
+                </ng-template>
               </div>
               <div class="header_account_list header_wishlist">
                 <a [routerLink]="['/wishlist']"
@@ -188,13 +193,13 @@
             <div class="categories_menu_toggle">
               <ul>
                 <li class="menu_item_children">
-                  <a href="#"
+                  <a routerLink="/"
                     >Vegetables<i class="fa fa-angle-right"></i
                     ><span class="expand"></span
                   ></a>
                   <ul class="categories_mega_menu">
                     <li class="menu_item_children">
-                      <a href="#">Dresses<span class="expand"></span></a>
+                      <a routerLink="/">Dresses<span class="expand"></span></a>
                       <ul class="categorie_sub_menu">
                         <li><a href="">Sweater</a></li>
                         <li><a href="">Evening</a></li>
@@ -203,7 +208,7 @@
                       </ul>
                     </li>
                     <li class="menu_item_children">
-                      <a href="#">Handbags<span class="expand"></span></a>
+                      <a routerLink="/">Handbags<span class="expand"></span></a>
                       <ul class="categorie_sub_menu">
                         <li><a href="">Shoulder</a></li>
                         <li><a href="">Satchels</a></li>
@@ -212,7 +217,7 @@
                       </ul>
                     </li>
                     <li class="menu_item_children">
-                      <a href="#">shoes<span class="expand"></span></a>
+                      <a routerLink="/">shoes<span class="expand"></span></a>
                       <ul class="categorie_sub_menu">
                         <li><a href="">Ankle Boots</a></li>
                         <li><a href="">Clog sandals </a></li>
@@ -221,7 +226,7 @@
                       </ul>
                     </li>
                     <li class="menu_item_children">
-                      <a href="#">Clothing<span class="expand"></span></a>
+                      <a routerLink="/">Clothing<span class="expand"></span></a>
                       <ul class="categorie_sub_menu">
                         <li><a href="">Coats Jackets </a></li>
                         <li><a href="">Raincoats</a></li>
@@ -232,13 +237,13 @@
                   </ul>
                 </li>
                 <li class="menu_item_children">
-                  <a href="#"
+                  <a routerLink="/"
                     >Fruits <i class="fa fa-angle-right"></i
                     ><span class="expand"></span
                   ></a>
                   <ul class="categories_mega_menu column_3">
                     <li class="menu_item_children">
-                      <a href="#">Chair<span class="expand"></span></a>
+                      <a routerLink="/">Chair<span class="expand"></span></a>
                       <ul class="categorie_sub_menu">
                         <li><a href="">Dining room</a></li>
                         <li><a href="">bedroom</a></li>
@@ -247,7 +252,7 @@
                       </ul>
                     </li>
                     <li class="menu_item_children">
-                      <a href="#">Lighting<span class="expand"></span></a>
+                      <a routerLink="/">Lighting<span class="expand"></span></a>
                       <ul class="categorie_sub_menu">
                         <li><a href="">Ceiling Lighting</a></li>
                         <li><a href="">Wall Lighting</a></li>
@@ -256,7 +261,7 @@
                       </ul>
                     </li>
                     <li class="menu_item_children">
-                      <a href="#">Sofa<span class="expand"></span></a>
+                      <a routerLink="/">Sofa<span class="expand"></span></a>
                       <ul class="categorie_sub_menu">
                         <li><a href="">Fabric Sofas</a></li>
                         <li><a href="">Leather Sofas</a></li>
@@ -267,13 +272,13 @@
                   </ul>
                 </li>
                 <li class="menu_item_children">
-                  <a href="#">
+                  <a routerLink="/">
                     Salads<i class="fa fa-angle-right"></i
                     ><span class="expand"></span
                   ></a>
                   <ul class="categories_mega_menu column_2">
                     <li class="menu_item_children">
-                      <a href="#">Brake Tools<span class="expand"></span></a>
+                      <a routerLink="/">Brake Tools<span class="expand"></span></a>
                       <ul class="categorie_sub_menu">
                         <li><a href="">Driveshafts</a></li>
                         <li><a href="">Spools</a></li>
@@ -282,7 +287,7 @@
                       </ul>
                     </li>
                     <li class="menu_item_children">
-                      <a href="#"
+                      <a routerLink="/"
                         >Emergency Brake<span class="expand"></span
                       ></a>
                       <ul class="categorie_sub_menu">
@@ -295,13 +300,13 @@
                   </ul>
                 </li>
                 <li class="menu_item_children">
-                  <a href="#">
+                  <a routerLink="/">
                     Fish &amp; Seafood <i class="fa fa-angle-right"></i
                     ><span class="expand"></span
                   ></a>
                   <ul class="categories_mega_menu column_2">
                     <li class="menu_item_children">
-                      <a href="#">Check Trousers<span class="expand"></span></a>
+                      <a routerLink="/">Check Trousers<span class="expand"></span></a>
                       <ul class="categorie_sub_menu">
                         <li><a href="">Building</a></li>
                         <li><a href="">Electronics</a></li>
@@ -310,7 +315,7 @@
                       </ul>
                     </li>
                     <li class="menu_item_children">
-                      <a href="#">Calculators<span class="expand"></span></a>
+                      <a routerLink="/">Calculators<span class="expand"></span></a>
                       <ul class="categorie_sub_menu">
                         <li><a href="">Dolls for Girls</a></li>
                         <li><a href="">Girls' Learning Toys</a></li>
@@ -320,13 +325,13 @@
                     </li>
                   </ul>
                 </li>
-                <li><a href="#"> Fresh Meat</a></li>
-                <li><a href="#"> Butter &amp; Eggs</a></li>
-                <li><a href="#">Milk</a></li>
-                <li><a href="#">Oil &amp; Vinegars</a></li>
-                <li><a href="#"> Bread</a></li>
-                <li><a href="#"> Jam &amp; Honey</a></li>
-                <li><a href="#"> Frozen Food</a></li>
+                <li><a routerLink="/"> Fresh Meat</a></li>
+                <li><a routerLink="/"> Butter &amp; Eggs</a></li>
+                <li><a routerLink="/">Milk</a></li>
+                <li><a routerLink="/">Oil &amp; Vinegars</a></li>
+                <li><a routerLink="/"> Bread</a></li>
+                <li><a routerLink="/"> Jam &amp; Honey</a></li>
+                <li><a routerLink="/"> Frozen Food</a></li>
                 <li class="hidden" style="display: none">
                   <a href="shop.html">New Sofas</a>
                 </li>
@@ -334,7 +339,7 @@
                   <a href="shop.html">Sleight Sofas</a>
                 </li>
                 <li>
-                  <a href="#" id="more-btn"
+                  <a routerLink="/" id="more-btn"
                     ><i class="fa fa-plus" aria-hidden="true"></i> More
                     Categories</a
                   >
@@ -349,13 +354,13 @@
             <nav>
               <ul>
                 <li>
-                  <a class="active" href="index.html"
+                  <a [routerLink]="['/home']" routerLinkActive="active" 
                     >home <i class="bi bi-chevron-down"></i></a>
                   <ul class="sub_menu home_sub_menu d-flex">
                     <li>
                       <span>Organic</span>
                       <ul>
-                        <li><a href="index.html">Organic 01</a></li>
+                        <li><a [routerLink]="['/']" >Organic 01</a></li>
                         <li><a href="index-2.html">Organic 02</a></li>
                         <li><a href="index-3.html">Organic 03</a></li>
                         <li><a href="index-4.html">Organic 04</a></li>
@@ -368,10 +373,10 @@
                         <li><a href="index-8.html">Fashion 01</a></li>
                         <li><a href="index-9.html">Fashion 02</a></li>
                         <li>
-                          <a href="#">Fashion 03 <span>(Comming Soon)</span></a>
+                          <a routerLink="/">Fashion 03 <span>(Comming Soon)</span></a>
                         </li>
                         <li>
-                          <a href="#">Fashion 04 <span>(Comming Soon)</span></a>
+                          <a routerLink="/">Fashion 04 <span>(Comming Soon)</span></a>
                         </li>
                       </ul>
                     </li>
@@ -381,12 +386,12 @@
                         <li><a href="index-6.html">Cosmetic 01</a></li>
                         <li><a href="index-7.html">Cosmetic 02</a></li>
                         <li>
-                          <a href="#"
+                          <a routerLink="/"
                             >Cosmetic 03 <span>(Comming Soon)</span></a
                           >
                         </li>
                         <li>
-                          <a href="#"
+                          <a routerLink="/"
                             >Cosmetic 04 <span>(Comming Soon)</span></a
                           >
                         </li>
@@ -395,11 +400,11 @@
                   </ul>
                 </li>
                 <li class="mega_items">
-                  <a href="shop.html">shop <i class="bi bi-chevron-down"></i></a>
+                  <a [routerLink]="['/shop']" routerLinkActive="active" >shop <i class="bi bi-chevron-down"></i></a>
                   <div class="mega_menu">
                     <ul class="mega_menu_inner">
                       <li>
-                        <a href="#">Shop Layouts</a>
+                        <a routerLink="/">Shop Layouts</a>
                         <ul>
                           <li><a href="shop-fullwidth.html">Full Width</a></li>
                           <li>
@@ -419,7 +424,7 @@
                         </ul>
                       </li>
                       <li>
-                        <a href="#">other Pages</a>
+                        <a routerLink="/">other Pages</a>
                         <ul>
                           <li><a [routerLink]="['/shopping-cart']" >cart</a></li>
                           <li><a [routerLink]="['/wishlist']">Wishlist</a></li>
@@ -429,7 +434,7 @@
                         </ul>
                       </li>
                       <li>
-                        <a href="#">Product Types</a>
+                        <a routerLink="/">Product Types</a>
                         <ul>
                           <li>
                             <a href="product-details.html">product details</a>
@@ -449,7 +454,7 @@
                   </div>
                 </li>
                 <li>
-                  <a href="blog.html">blog <i class="bi bi-chevron-down"></i></a>
+                  <a [routerLink]="['/blog']" routerLinkActive="active" >blog <i class="bi bi-chevron-down"></i></a>
                   <ul class="sub_menu pages">
                     <li><a href="blog-details.html">blog details</a></li>
                     <li><a href="blog-fullwidth.html">blog fullwidth</a></li>
@@ -457,17 +462,17 @@
                   </ul>
                 </li>
                 <li>
-                  <a href="#">pages <i class="bi bi-chevron-down"></i></a>
+                  <a [routerLink]="['/pages']" routerLinkActive="active">pages <i class="bi bi-chevron-down"></i></a>
                   <ul class="sub_menu pages">
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="services.html">services</a></li>
-                    <li><a href="faq.html">Frequently Questions</a></li>
-                    <li><a href="contact.html">contact</a></li>
+                    <li><a [routerLink]="['/about-us']">About Us</a></li>
+                    <li><a [routerLink]="['/services']">services</a></li>
+                    <li><a [routerLink]="['/q-and-a']">Frequently Questions</a></li>
+                    <li><a [routerLink]="['/contact-us']">contact</a></li>
                     <li><a [routerLink]="['/login']">login</a></li>
-                    <li><a href="404.html">Error 404</a></li>
+                    <li><a [routerLink]="['/page-not-found']">Error 404</a></li>
                   </ul>
                 </li>
-                <li><a href="contact.html"> Contact Us</a></li>
+                <li><a [routerLink]="['/contact-us']" routerLinkActive="active"> Contact Us</a></li>
               </ul>
             </nav>
           </div>
