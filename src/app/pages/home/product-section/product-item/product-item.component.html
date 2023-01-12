@@ -1,13 +1,19 @@
-
 <div class="product_items">
-  <article class="single_product" [ngClass]="{'product-horizontal': isHorizontal}">
-    <figure>
+  <article
+    class="single_product"
+    [ngClass]="{ 'product-horizontal': isHorizontal, 'full-content': isShowFullContent }"
+  >
+    <!-- <figure> -->
       <div class="product_thumb">
         <a class="primary_img" [routerLink]="['/product-details/1']"
-          ><img [src]="productItem.imageGalleries[0]" alt={{productItem.name}}
+          ><img
+            [src]="productItem.imageGalleries[0]"
+            alt="{{ productItem.name }}"
         /></a>
         <a class="secondary_img" [routerLink]="['/product-details/1']"
-          ><img [src]="productItem.imageGalleries[1]" alt={{productItem.name}}
+          ><img
+            [src]="productItem.imageGalleries[1]"
+            alt="{{ productItem.name }}"
         /></a>
         <div class="label_product">
           <span class="label_sale" *ngIf="productItem.isSale">Sale</span>
@@ -36,17 +42,31 @@
           </ul>
         </div>
       </div>
-      <figcaption class="product_content">
+      <div class="product_content" [ngClass]="{list_content: isShowFullContent}">
         <h4 class="product_name">
-          <a [routerLink]="['/product-details/1']">{{productItem.name}}</a>
+          <a [routerLink]="['/product-details/1']">{{ productItem.name }}</a>
         </h4>
-        <p><a href="#">{{productItem.category}}</a></p>
+        <p>
+          <a href="#">{{ productItem.category }}</a>
+        </p>
+        <div class="price_box">
+          <span class="current_price">{{ productItem.currentPrice }}</span>
+          <span class="old_price">{{ productItem.oldPrice }}</span>
+        </div>
+        <div class="product_desc" *ngIf="isShowFullContent">
+          <p>
+            {{ productItem.description }}
+          </p>
+        </div>
         <div class="action_links" *ngIf="isHorizontal">
           <ul>
             <li class="add_to_cart">
               <a href="cart.html">
-                <i class="bi bi-cart4"></i>
-                <span class="tooltiptext">Add to cart</span>
+                <div *ngIf="!isShowFullContent; else addToCartText">
+                  <i class="bi bi-cart4"></i>
+                  <span class="tooltiptext">Add to cart</span>
+                </div>
+                <ng-template #addToCartText>Add to cart</ng-template>
               </a>
             </li>
             <li class="quick_button">
@@ -63,11 +83,7 @@
             </li>
           </ul>
         </div>
-        <div class="price_box">
-          <span class="current_price">{{productItem.currentPrice}}</span>
-          <span class="old_price">{{productItem.oldPrice}}</span>
-        </div>
-      </figcaption>
-    </figure>
+      </div>
+    <!-- </figure> -->
   </article>
 </div>
