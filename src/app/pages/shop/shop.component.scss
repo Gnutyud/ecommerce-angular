@@ -1,0 +1,225 @@
+@import "../../../assets/styles/mixin";
+
+.shop_area {
+  margin-top: 70px;
+  margin-bottom: 70px;
+
+  .sidebar_widget {
+    .widget_list {
+      margin-bottom: 33px;
+
+      h3 {
+        font-size: 15px;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        text-transform: uppercase;
+        font-weight: 500;
+        line-height: 20px;
+        border-bottom: 1px solid #ededed;
+      }
+
+      &.widget_color > ul > li > a {
+        font-size: 14px;
+        display: block;
+        line-height: 30px;
+
+        span {
+          float: right;
+        }
+      }
+
+      &.widget_filter {
+        overflow: hidden;
+
+        .input-checkbox {
+          li {
+            margin-bottom: 10px;
+
+            label {
+              cursor: pointer;
+              display: flex;
+              align-items: center;
+
+              input {
+                margin-right: 10px;
+              }
+            }
+          }
+        }
+      }
+
+      &.tags_widget {
+        .tag_cloud a {
+          margin: 0 5px 12px 0;
+          padding: 5px 15px;
+          text-transform: capitalize;
+          display: inline-block;
+          border: 1px solid #ededed;
+          background: #ffffff;
+          border-radius: 3px;
+          font-size: 13px;
+
+          &:hover {
+            background: #40a944;
+            border-color: #40a944;
+            color: #ffffff;
+          }
+        }
+      }
+
+      &.banner_widget {
+        .banner_thumb {
+          @include hoverEffect;
+        }
+      }
+    }
+  }
+
+  .shop_toolbar_wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #ddd;
+    padding: 8px 10px;
+    margin: 0 0 30px;
+
+    .shop_toolbar_btn {
+      display: flex;
+      align-items: center;
+      
+      & > button {
+        margin-right: 10px;
+        border: 0;
+        background: inherit;
+        &.btn-grid-3 {
+          background: url(../../../assets/icons/bkg_grid.png) no-repeat scroll
+            center center;
+          width: 20px;
+          height: 20px;
+
+          &.active {
+            background: url(../../../assets/icons/bkg_grid_hover.png) no-repeat
+              scroll center center !important;
+          }
+        }
+
+        &.btn-grid-4 {
+          background: url(../../../assets/icons/bkg_grid4.png) no-repeat scroll
+            center center;
+          width: 26px;
+          height: 22px;
+          &.active {
+            background: url(../../../assets/icons/bkg_grid4_hover.png) no-repeat
+              scroll center center !important;
+          }
+        }
+
+        &.btn-list {
+          background: url(../../../assets/icons/bkg_list.png) no-repeat scroll
+            center center;
+          width: 20px;
+          height: 20px;
+
+          &.active {
+            background: url(../../../assets/icons/bkg_list_hover.png) no-repeat
+              scroll center center !important;
+          }
+        }
+      }
+    }
+
+    .orderBy_option {
+      display: flex;
+      align-items: center;
+      border-radius: 5px;
+      border: solid 1px #e8e8e8;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: normal;
+      height: 42px;
+      min-width: 200px;
+      line-height: 40px;
+      outline: none;
+      padding-left: 18px;
+      padding-right: 30px;
+      position: relative;
+
+      &:after {
+        border-bottom: 2px solid #999;
+        border-right: 2px solid #999;
+        content: "";
+        display: block;
+        height: 5px;
+        margin-top: -4px;
+        pointer-events: none;
+        position: absolute;
+        right: 12px;
+        top: 50%;
+        -webkit-transform-origin: 66% 66%;
+        transform-origin: 66% 66%;
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+        -webkit-transition: all 0.15s ease-in-out;
+        transition: all 0.15s ease-in-out;
+        width: 5px;
+      }
+
+      &.open:after {
+        -webkit-transform: rotate(-135deg);
+        transform: rotate(-135deg);
+      }
+
+      .list {
+        position: absolute;
+        left: 0;
+        top: 100%;
+        box-shadow: 0 0 0 1px rgb(68 68 68 / 11%);
+        margin-top: 4px;
+        width: 100%;
+        z-index: 99;
+        background-color: #fff;
+        border-radius: 5px;
+
+        .option {
+          padding-left: 18px;
+
+          &:hover {
+            background-color: #f6f6f6;
+          }
+
+          &.selected {
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+
+  .shop_wrapper > div {
+    -webkit-transition: all 1s ease;
+    transition: all 1s ease;
+  }
+
+  .shop_toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #e5e5e5;
+    padding: 8px 10px;
+    margin: 0 0 40px;
+
+    &.t_bottom {
+      justify-content: center;
+      margin-bottom: 0;
+    }
+
+    & ::ng-deep .ngx-pagination .current {
+      background: #40a944;
+      color: #ffffff;
+    }
+
+    & ::ng-deep .ngx-pagination {
+      margin-bottom: 0 !important;
+    }
+  }
+}

@@ -7,6 +7,12 @@
 
   .breadcrumb_content {
     text-align: center;
+    
+    h3 {
+      font-size: 42px;
+      line-height: 50px;
+      margin-bottom: 9px;
+    }
 
     ul li {
       display: inline-block;
@@ -28,7 +34,7 @@
       &:last-child {
         margin-right: 0;
         &::before {
-            content: none;
+          content: none;
         }
       }
     }

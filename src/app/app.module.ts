@@ -28,9 +28,12 @@ import { TableComponent } from './shared/components/table/table.component';
 import { ProductDetailsComponent } from './shared/components/product-details/product-details.component';
 // Import the library
 import { SwiperModule } from 'swiper/angular';
+import {NgxPaginationModule} from 'ngx-pagination';
 import { CartComponent } from './pages/cart/cart.component';
 import { MiniCartComponent } from './shared/components/mini-cart/mini-cart.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+import { ShopComponent } from './pages/shop/shop.component';
+import { OutsideClickDirective } from './shared/directive/outside-click.directive';
 
 @NgModule({
   declarations: [
@@ -59,12 +62,15 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
     CartComponent,
     MiniCartComponent,
     PageNotFoundComponent,
+    ShopComponent,
+    OutsideClickDirective,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     // Third party libs
     SwiperModule,
+    NgxPaginationModule
   ],
   providers: [ProductService],
   bootstrap: [AppComponent],

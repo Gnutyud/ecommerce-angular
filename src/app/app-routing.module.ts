@@ -6,6 +6,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
+import { ShopComponent } from './pages/shop/shop.component';
 import { WishlistComponent } from './pages/wishlist/wishlist.component';
 
 const routes: Routes = [
@@ -34,6 +35,10 @@ const routes: Routes = [
   {
     path: 'shopping-cart',
     component: CartComponent,
+  },
+  {
+    path: 'shop',
+    component: ShopComponent,
   },
   {
     path: '**',

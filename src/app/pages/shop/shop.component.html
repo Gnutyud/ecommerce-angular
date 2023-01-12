@@ -1,0 +1,195 @@
+<app-breadcrumb
+  [breadcrumbData]="breadcrumbData"
+  pageTitle="Shop"
+></app-breadcrumb>
+<div class="shop_area">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3 col-md-12">
+        <!--sidebar widget start-->
+        <aside class="sidebar_widget">
+          <div class="widget_inner">
+            <div class="widget_list widget_filter">
+              <h3>Filter by price</h3>
+              <ul class="input-checkbox">
+                <li>
+                  <label for="all">
+                    <input type="checkbox" name="all" id="all" />
+                    All
+                  </label>
+                </li>
+                <li>
+                  <label for="from500to1000">
+                    <input
+                      type="checkbox"
+                      name="from500to1000"
+                      id="from500to1000"
+                    />
+                    From $500 to $1000
+                  </label>
+                </li>
+                <li>
+                  <label for="from1000to5000">
+                    <input
+                      type="checkbox"
+                      name="from1000to5000"
+                      id="from1000to5000"
+                    />
+                    From $1000 to $5000
+                  </label>
+                </li>
+                <li>
+                  <label for="from5000to10000">
+                    <input
+                      type="checkbox"
+                      name="from5000to10000"
+                      id="from5000to10000"
+                    />
+                    From $5000 to $10000
+                  </label>
+                </li>
+                <li>
+                  <label for="morethan10000">
+                    <input
+                      type="checkbox"
+                      name="morethan10000"
+                      id="morethan10000"
+                    />
+                    More than $10000
+                  </label>
+                </li>
+              </ul>
+            </div>
+            <div class="widget_list widget_color">
+              <h3>Select By SIze</h3>
+              <ul>
+                <li>
+                  <a href="#">S <span>(6)</span></a>
+                </li>
+                <li>
+                  <a href="#"> M <span>(8)</span></a>
+                </li>
+                <li>
+                  <a href="#">L <span>(10)</span></a>
+                </li>
+                <li>
+                  <a href="#"> XL <span>(6)</span></a>
+                </li>
+                <li>
+                  <a href="#">XLL <span>(4)</span></a>
+                </li>
+              </ul>
+            </div>
+            <div class="widget_list tags_widget">
+              <h3>Product tags</h3>
+              <div class="tag_cloud">
+                <a href="#">Men</a>
+                <a href="#">Women</a>
+                <a href="#">Watches</a>
+                <a href="#">Bags</a>
+                <a href="#">Dress</a>
+                <a href="#">Belt</a>
+                <a href="#">Accessories</a>
+                <a href="#">Shoes</a>
+              </div>
+            </div>
+            <div class="widget_list banner_widget">
+              <div class="banner_thumb">
+                <a href="#"
+                  ><img src="assets/images/bg/banner17.jpg" alt="banner"
+                /></a>
+              </div>
+            </div>
+          </div>
+        </aside>
+        <!--sidebar widget end-->
+      </div>
+      <div class="col-lg-9 col-md-12">
+        <!--shop wrapper start-->
+        <!--shop toolbar start-->
+        <div class="shop_toolbar_wrapper">
+          <div class="shop_toolbar_btn">
+            <button
+              type="button"
+              class="btn-grid-3"
+              [ngClass]="{ active: grid === 3 }"
+              (click)="onChangeLayout(3)"
+            ></button>
+
+            <button
+              type="button"
+              class="btn-grid-4"
+              [ngClass]="{ active: grid === 4 }"
+              (click)="onChangeLayout(4)"
+            ></button>
+
+            <button
+              type="button"
+              class="btn-list"
+              [ngClass]="{ active: grid === 1 }"
+              (click)="onChangeLayout(1)"
+            ></button>
+          </div>
+          <div
+            class="orderBy_option"
+            [ngClass]="{ open: isShowOrderByMenu }"
+            (click)="onOpenDropdownMenu()"
+          >
+            <span class="current">{{ orderByValue(orderBy) }}</span>
+            <ul
+              class="list"
+              *ngIf="isShowOrderByMenu"
+              (outsideClick)="isShowOrderByMenu = false"
+            >
+              <li
+                class="option"
+                (click)="onSelectOrderBy(item.id)"
+                [ngClass]="{ selected: orderBy === item.id }"
+                *ngFor="let item of orderByList"
+              >
+                {{ item.name }}
+              </li>
+            </ul>
+          </div>
+          <div class="page_amount">
+            <p>
+              Showing {{ page * itemsPerPage - itemsPerPage + 1 }}–{{
+                itemsPerPage * page > productList.length
+                  ? productList.length
+                  : itemsPerPage * page
+              }}
+              of {{ productList.length }} results
+            </p>
+          </div>
+        </div>
+        <!--shop toolbar end-->
+        <div class="row shop_wrapper">
+          <div
+            class="col-md-4 col-sm-6"
+            [ngClass]="
+              grid === 3 ? 'col-lg-4' : grid === 4 ? 'col-lg-3' : 'col-lg-12'
+            "
+            *ngFor="
+              let item of productList
+                | paginate : { itemsPerPage, currentPage: page }
+            "
+          >
+            <app-product-item
+              [productItem]="item"
+              [isHorizontal]="grid === 1"
+              [isShowFullContent]="grid === 1"
+            ></app-product-item>
+          </div>
+        </div>
+
+        <div class="shop_toolbar t_bottom">
+          <pagination-controls
+            (pageChange)="page = $event"
+          ></pagination-controls>
+        </div>
+        <!--shop toolbar end-->
+        <!--shop wrapper end-->
+      </div>
+    </div>
+  </div>
+</div>
