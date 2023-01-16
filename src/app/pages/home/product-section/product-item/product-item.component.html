@@ -1,89 +1,97 @@
 <div class="product_items">
   <article
     class="single_product"
-    [ngClass]="{ 'product-horizontal': isHorizontal, 'full-content': isShowFullContent }"
+    [ngClass]="{
+      'product-horizontal': isHorizontal,
+      'full-content': isShowFullContent
+    }"
   >
     <!-- <figure> -->
-      <div class="product_thumb">
-        <a class="primary_img" [routerLink]="['/product-details/1']"
-          ><img
-            [src]="productItem.imageGalleries[0]"
-            alt="{{ productItem.name }}"
-        /></a>
-        <a class="secondary_img" [routerLink]="['/product-details/1']"
-          ><img
-            [src]="productItem.imageGalleries[1]"
-            alt="{{ productItem.name }}"
-        /></a>
-        <div class="label_product">
-          <span class="label_sale" *ngIf="productItem.isSale">Sale</span>
-          <span class="label_new" *ngIf="productItem.isNew">New</span>
-        </div>
-        <div class="action_links" *ngIf="!isHorizontal">
-          <ul>
-            <li class="add_to_cart">
+    <div class="product_thumb">
+      <a class="primary_img" [routerLink]="['/product-details/1']"
+        ><img
+          [src]="productItem.imageGalleries[0]"
+          alt="{{ productItem.name }}"
+      /></a>
+      <a class="secondary_img" [routerLink]="['/product-details/1']"
+        ><img
+          [src]="productItem.imageGalleries[1]"
+          alt="{{ productItem.name }}"
+      /></a>
+      <div class="label_product">
+        <span class="label_sale" *ngIf="productItem.isSale">Sale</span>
+        <span class="label_new" *ngIf="productItem.isNew">New</span>
+      </div>
+      <div class="action_links" *ngIf="!isHorizontal">
+        <ul>
+          <li class="add_to_cart">
+            <app-tooltip [title]="'Add to cart'">
               <a href="cart.html">
                 <i class="bi bi-cart4"></i>
-                <span class="tooltiptext">Add to cart</span>
               </a>
-            </li>
-            <li class="quick_button">
+            </app-tooltip>
+          </li>
+          <li class="quick_button">
+            <app-tooltip [title]="'Quick view'">
               <a href="#">
                 <i class="bi bi-search"></i>
-                <span class="tooltiptext">quick view</span>
               </a>
-            </li>
-            <li class="wishlist">
-              <a href="wishlist.html"
-                ><i class="bi bi-bag-heart"></i>
-                <span class="tooltiptext">Add to Wishlist</span>
-              </a>
-            </li>
-          </ul>
-        </div>
+            </app-tooltip>
+          </li>
+          <li class="wishlist">
+            <app-tooltip [title]="'Add to Wishlist'">
+              <a href="wishlist.html"><i class="bi bi-bag-heart"></i> </a>
+            </app-tooltip>
+          </li>
+        </ul>
       </div>
-      <div class="product_content" [ngClass]="{list_content: isShowFullContent}">
-        <h4 class="product_name">
-          <a [routerLink]="['/product-details/1']">{{ productItem.name }}</a>
-        </h4>
+    </div>
+    <div
+      class="product_content"
+      [ngClass]="{ list_content: isShowFullContent }"
+    >
+      <h4 class="product_name">
+        <a [routerLink]="['/product-details/1']">{{ productItem.name }}</a>
+      </h4>
+      <p>
+        <a href="#">{{ productItem.category }}</a>
+      </p>
+      <div class="price_box">
+        <span class="current_price">{{ productItem.currentPrice }}</span>
+        <span class="old_price">{{ productItem.oldPrice }}</span>
+      </div>
+      <div class="product_desc" *ngIf="isShowFullContent">
         <p>
-          <a href="#">{{ productItem.category }}</a>
+          {{ productItem.description }}
         </p>
-        <div class="price_box">
-          <span class="current_price">{{ productItem.currentPrice }}</span>
-          <span class="old_price">{{ productItem.oldPrice }}</span>
-        </div>
-        <div class="product_desc" *ngIf="isShowFullContent">
-          <p>
-            {{ productItem.description }}
-          </p>
-        </div>
-        <div class="action_links" *ngIf="isHorizontal">
-          <ul>
-            <li class="add_to_cart">
-              <a href="cart.html">
-                <div *ngIf="!isShowFullContent; else addToCartText">
+      </div>
+      <div class="action_links" *ngIf="isHorizontal">
+        <ul>
+          <li class="add_to_cart">
+            <a href="cart.html">
+              <div *ngIf="!isShowFullContent; else addToCartText">
+                <app-tooltip [title]="'Add to cart'">
                   <i class="bi bi-cart4"></i>
-                  <span class="tooltiptext">Add to cart</span>
-                </div>
-                <ng-template #addToCartText>Add to cart</ng-template>
-              </a>
-            </li>
-            <li class="quick_button">
+                </app-tooltip>
+              </div>
+              <ng-template #addToCartText>Add to cart</ng-template>
+            </a>
+          </li>
+          <li class="quick_button">
+            <app-tooltip [title]="'Quick view'">
               <a href="#">
                 <i class="bi bi-search"></i>
-                <span class="tooltiptext">quick view</span>
               </a>
-            </li>
-            <li class="wishlist">
-              <a href="wishlist.html"
-                ><i class="bi bi-bag-heart"></i>
-                <span class="tooltiptext">Add to Wishlist</span>
-              </a>
-            </li>
-          </ul>
-        </div>
+            </app-tooltip>
+          </li>
+          <li class="wishlist">
+            <app-tooltip [title]="'Add to Wishlist'">
+              <a href="wishlist.html"><i class="bi bi-bag-heart"></i> </a>
+            </app-tooltip>
+          </li>
+        </ul>
       </div>
+    </div>
     <!-- </figure> -->
   </article>
 </div>
