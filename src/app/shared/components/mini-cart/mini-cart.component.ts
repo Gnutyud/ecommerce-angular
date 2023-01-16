@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-mini-cart',
@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./mini-cart.component.scss'],
 })
 export class MiniCartComponent implements OnInit {
+  @Input() isOpen: boolean = false;
+  @Output() onCloseMiniCartEvent = new EventEmitter<boolean>();
+
   cartList = [
     {
       name: 'Primis In Faucibus',
@@ -29,4 +32,8 @@ export class MiniCartComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  onClose() {
+    this.onCloseMiniCartEvent.emit(false);
+  }
 }

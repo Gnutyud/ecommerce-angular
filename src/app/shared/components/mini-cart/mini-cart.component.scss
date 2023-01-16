@@ -1,3 +1,18 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba($color: #222222, $alpha: 0.5);
+  z-index: 999;
+  visibility: hidden;
+
+  &.active {
+    visibility: visible;
+  }
+}
+
 .mini_cart {
   position: fixed;
   min-width: 355px;
@@ -107,10 +122,10 @@
         border: 1px solid #ededed;
 
         &:hover {
-            background: #40a944;
-            border-color: #40a944;
-            color: #fff;
-          }
+          background: #40a944;
+          border-color: #40a944;
+          color: #fff;
+        }
       }
     }
   }

@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, EventEmitter, HostListener, OnInit, Output } from '@angular/core';
 import { AuthService } from 'src/app/core/services/auth.service';
 
 @Component({
@@ -10,6 +10,7 @@ export class HeaderComponent implements OnInit {
   isSticky: boolean = false;
   constructor(private authService: AuthService) {}
   isLoggedIn = this.authService.loggedIn;
+  isShowMiniCart = false;
 
   @HostListener('window:scroll', ['$event'])
   onWindowScroll() {
@@ -21,7 +22,8 @@ export class HeaderComponent implements OnInit {
     if (scrollTopLength <= 140) this.isSticky = false;
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
 
   onLogout() {
     this.authService.logout();
@@ -29,5 +31,13 @@ export class HeaderComponent implements OnInit {
 
   ngDoCheck() {
     this.isLoggedIn = this.authService.loggedIn;
+  }
+
+  onShowMiniCart() {
+    this.isShowMiniCart = true;
+  }
+
+  onCloseMiniCart() {
+    this.isShowMiniCart = false;
   }
 }
