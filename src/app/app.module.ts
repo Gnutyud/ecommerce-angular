@@ -34,6 +34,8 @@ import { MiniCartComponent } from './shared/components/mini-cart/mini-cart.compo
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { ShopComponent } from './pages/shop/shop.component';
 import { OutsideClickDirective } from './shared/directive/outside-click.directive';
+import { TooltipDirective } from './shared/directive/tooltip.directive';
+import { TooltipComponent } from './shared/components/tooltip/tooltip.component';
 
 @NgModule({
   declarations: [
@@ -64,6 +66,8 @@ import { OutsideClickDirective } from './shared/directive/outside-click.directiv
     PageNotFoundComponent,
     ShopComponent,
     OutsideClickDirective,
+    TooltipDirective,
+    TooltipComponent,
   ],
   imports: [
     BrowserModule,
