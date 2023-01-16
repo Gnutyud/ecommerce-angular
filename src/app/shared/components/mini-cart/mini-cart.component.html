@@ -1,12 +1,13 @@
 <!--mini cart-->
-<div class="mini_cart">
+<div class="backdrop" [ngClass]="{active: isOpen}" (click)="onClose()"></div>
+<div class="mini_cart" [ngClass]="{active: isOpen}">
   <div class="cart_gallery">
     <div class="cart_close">
       <div class="cart_text">
         <h3>cart</h3>
       </div>
       <div class="mini_cart_close">
-        <a href="javascript:void(0)"><i class="bi bi-x-lg"></i></a>
+        <a (click)="onClose()"><i class="bi bi-x-lg"></i></a>
       </div>
     </div>
     <div class="cart_item" *ngFor="let item of cartList">
@@ -38,7 +39,7 @@
   </div>
   <div class="mini_cart_footer">
     <div class="cart_button">
-      <a [routerLink]="['/shopping-cart']"
+      <a (click)="onClose()" [routerLink]="['/shopping-cart']"
         ><i class="bi bi-cart4"></i> View cart</a
       >
     </div>
