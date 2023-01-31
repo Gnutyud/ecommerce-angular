@@ -11,6 +11,7 @@ export class HeaderComponent implements OnInit {
   constructor(private authService: AuthService) {}
   isLoggedIn = this.authService.loggedIn;
   isShowMiniCart = false;
+  isShowCategories = false;
 
   @HostListener('window:scroll', ['$event'])
   onWindowScroll() {
@@ -39,5 +40,9 @@ export class HeaderComponent implements OnInit {
 
   onCloseMiniCart() {
     this.isShowMiniCart = false;
+  }
+
+  onToogleMenuCategories() {
+    this.isShowCategories = !this.isShowCategories;
   }
 }
